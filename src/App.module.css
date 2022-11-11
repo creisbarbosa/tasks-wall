@@ -9,6 +9,7 @@
 .gallery {
 
   margin-top: 4rem;
+  margin-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1.75rem;

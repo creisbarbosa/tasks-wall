@@ -1,60 +1,72 @@
-.creatorHeader {
+.content {
+  display: block;
+}
+
+.creatorButton {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 8px 8px 32px;
-  
-  width: 28.75rem;
+  padding: 0.5rem 2rem;
+  width: 24rem;
   height: 52px;
 
   font-weight:700;
-
+  color: var(--gray-100);
   background: var(--gray-900);
   border: 1px solid var(--gray-700);
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.6);
   border-radius: 12px;
 }
 
-.creatorModal {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  
+.creatorButton:hover {
+  background: var(--gray-800);
+}
+
+.creatorForm {
+  display: block;
+  width: 24rem;
+
   margin-top: 1rem;
   font-weight:700;
-  position: absolute;
-  width: 28.75rem;
-
+  color: var(--gray-100);
   background: var(--gray-900);
   border: 1px solid var(--gray-700);
   box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.6);
   border-radius: 12px;
+
+  position: absolute;
+
 }
 
-.creatorModalHeader {
-  width:100%;
-  display: flex;
+.creatorFormTitle {
+  displaY: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 8px 8px 32px;
+  padding-right: 0.5rem;
+  border-bottom: 1px solid var(--gray-700);
 }
 
-.creatorModalInput {
-  font-weight: 400;
-  width:100%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin:;
-  border-top: 1px solid var(--gray-700);
-  padding: 16px 16px 16px 32px;
+.creatorFormTitle input {
+  color: var(--gray-100);
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 12px 12px 0 0;
 }
 
-@media (max-width: 768px) {
-  .creatorHeader .creatorModal {
-    padding: 8px 4px 8px 32px;
-    max-width: 100%;
-  }
+.creatorFormTitle button {
+  background-color: var(--gray-700);
+  height: 40px;
+  width: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.creatorFormTask {
+  padding: 0.75rem 2rem;
+  color: var(--gray-100);
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 0 0 12px 12px;
 }

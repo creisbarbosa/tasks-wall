@@ -1,0 +1,16 @@
+.checkboxWrapper input{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border:  2px solid #A8A8B2;
+  outline: none;
+  cursor: pointer;
+}
+
+input.checked {
+  background-color: #007a7e;
+  position: relative;
+}
