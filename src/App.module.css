@@ -5,52 +5,9 @@
   align-itens: flex-start;
 
 }
-
-.gallery {
-
-  margin-top: 4rem;
-  margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.75rem;
-  
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 4rem;
-}
-
-.title {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 1rem;
-  font-size: 2rem;
-}
-
-.title strong {
-  color: var(--purple-500);
-}
   
 @media (max-width: 768px) {
     html {
       font-size: 85%;
-    }
-
-    .header {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.65rem;
-      margin-top: 2rem;
-    }
-    
-    .gallery {
-      margin-top: 1.75rem;
-      grid-template-columns: 1fr;
     }
   }

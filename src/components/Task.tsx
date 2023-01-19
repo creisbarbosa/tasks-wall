@@ -1,40 +1,37 @@
-import { Trash } from 'phosphor-react';
-import { TaskCheck } from './TaskCheck';
-import styles from './Task.module.css';
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from  'date-fns/locale/pt-BR'
+
+import {CheckSquare, Trash} from 'phosphor-react'
+import styles from './Task.module.css'
 
 interface TaskProps {
-  title: string;
-  contents: [
-    { content: string; }
-  ]
+  content: string
+  publishedAt: Date
 }
 
-export function Task({ title, contents }: TaskProps) {
+export function Task({ content, publishedAt }: TaskProps) {
+  const publishedDateFormat = format(publishedAt, "d LLL 'às' HH:mm'h'", {
+    locale: ptBR,
+  })
 
-  console.log(contents);
+	const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+    addSuffix: true,
+	})
 
   return (
-    <div className={styles.task}>
-      <header>
-        <span>{title}</span>
-        <button
-          type='button'
-          title="Deletar comentário"
-        >
-          <Trash size={18} color="var(--gray-100)"/>
+    <div className={styles.wrapper}>
+      <div className={styles.content}>
+        <CheckSquare size={24} weight="bold"/>
+        <p>{content}</p>
+      </div>
+      
+      <div className={styles.info}>
+        <time title={publishedDateFormat} dateTime={publishedAt.toISOString()}>{publishedDateRelativeToNow}</time>
+        <button title="Delete task">
+          <Trash size={20} />
         </button>
-      </header>
-      <main>
-        <ul>
-          {contents.map(line => {
-            return (
-              <TaskCheck 
-                task={line.content}
-              />
-            )
-          })}
-        </ul>
-      </main>
+      </div>
+
     </div>
-  );
+  )
 }
