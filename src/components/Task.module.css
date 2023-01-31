@@ -15,6 +15,15 @@
   gap: 1rem;
 }
 
+.taskNotCompleted {
+  color: var(--gray-300);
+}
+
+.taskCompleted {
+  color: var(--gray-600);
+  text-decoration: line-through;
+}
+
 .info {
   display: flex;
   align-items: center;

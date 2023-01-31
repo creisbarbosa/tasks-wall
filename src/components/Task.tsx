@@ -1,15 +1,16 @@
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from  'date-fns/locale/pt-BR'
 
-import {CheckSquare, Trash} from 'phosphor-react'
+import {CheckCircle, Circle, Trash} from 'phosphor-react'
 import styles from './Task.module.css'
 
 interface TaskProps {
   content: string
   publishedAt: Date
+  isCompleted: boolean
 }
 
-export function Task({ content, publishedAt }: TaskProps) {
+export function Task({ content, publishedAt, isCompleted }: TaskProps) {
   const publishedDateFormat = format(publishedAt, "d LLL 'às' HH:mm'h'", {
     locale: ptBR,
   })
@@ -21,8 +22,8 @@ export function Task({ content, publishedAt }: TaskProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <CheckSquare size={24} weight="bold"/>
-        <p>{content}</p>
+        {isCompleted ? <CheckCircle size={24} weight="bold"/> : <Circle size={24} weight="bold"/>}
+        {isCompleted ? <p className={styles.taskCompleted} >{content}</p> : <p className={styles.taskNotCompleted}>{content}</p> }
       </div>
       
       <div className={styles.info}>
